@@ -18,7 +18,9 @@ function Header() {
             <span>Home</span>
           </Link>
           <div onMouseEnter={toggleDropdown} onMouseLeave={toggleDropdown}>
-            <span className="styledSpan1">Ta Applicant</span>
+          <Link to="/applicant">
+  <span className="styledSpan1">Ta Applicant</span>
+</Link>
             {dropdownOpen && (
               <div className="dropdownMenu">
                 <Link to="/submit-application">Submit Application</Link>
