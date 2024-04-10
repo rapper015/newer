@@ -23,9 +23,9 @@ function Header() {
 </Link>
             {dropdownOpen && (
               <div className="dropdownMenu">
-                <Link to="/submit-application">Submit Application</Link>
-                <Link to="/check-status">Check Status</Link>
-                <Link to="/your-data">Your Data</Link>
+                <Link to="/submitapplicant">Submit Application</Link>
+                <Link to="/checkstatus">Check Status</Link>
+                <Link to="/yourdata">Your Data</Link>
                 <Link to="/notifications">Notifications</Link>
                 <Link to="/logout">Logout</Link>
               </div>

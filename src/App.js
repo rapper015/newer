@@ -11,6 +11,9 @@ import Dashboard from "./components/Dashboard";
 import Home from "./components/Home";
 import Applicant from "./components/Applicant";
 import RegisterPage2 from "./components/Register2";
+import SubmitApplicant from "./components/SubmitApplicant";
+import CheckStatusPage from "./components/CheckStatus";
+import YourDataPage from "./components/YourData";
 
 function App() {
   return (
@@ -23,6 +26,9 @@ function App() {
       <Route path="/dashboard" element={<Dashboard/>} />
       <Route path="/home" element={<Home/>} />
       <Route path="/applicant" element={<Applicant/>} />
+      <Route path="/submitapplicant" element={<SubmitApplicant/>} />
+      <Route path="/checkstatus" element={<CheckStatusPage/>} />
+      <Route path="/yourdata" element={<YourDataPage/>} />
       </Routes>
       </Router>
     </div>
