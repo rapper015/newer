@@ -1,8 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import * as FileSaver from 'file-saver';
 import * as XLSX from 'xlsx';
+import './YourData.css';
 
-const YourDataPage = ({ applicantData }) => {
+const YourDataPage = () => {
+  const [applicantData, setApplicantData] = useState({
+    studentId: '123',
+    firstName: 'John',
+    lastName: 'Doe',
+    email: 'john.doe@example.com',
+    contactNumber: '1234567890',
+    address: '123 Main St',
+    cgpa: '3.5',
+    additionalInformation: 'Some additional information',
+  },);
+
   const exportToCSV = () => {
     const ws = XLSX.utils.json_to_sheet([applicantData]);
     const wb = XLSX.utils.book_new();
@@ -12,8 +24,8 @@ const YourDataPage = ({ applicantData }) => {
 
   return (
     <div className="container">
-      <h1>TA Applicant Details</h1>
       <div className="tableContainer">
+      <h1>TA Applicant Details</h1>
         <table className="table">
           <thead>
             <tr>
@@ -30,25 +42,13 @@ const YourDataPage = ({ applicantData }) => {
             </tr>
           </tbody>
         </table>
+        <div className="buttonContainer">
+        <button className="button2" onClick={exportToCSV}>Export to Excel</button>
       </div>
-      <div className="buttonContainer">
-        <button className="button" onClick={exportToCSV}>Export to Excel</button>
       </div>
+      
     </div>
   );
 };
 
 export default YourDataPage;
-
-const applicantData = {
-    studentId: '123',
-    firstName: 'John',
-    lastName: 'Doe',
-    email: 'john.doe@example.com',
-    contactNumber: '1234567890',
-    address: '123 Main St',
-    cgpa: '3.5',
-    additionalInformation: 'Some additional information',
-  };
-  
-  <YourDataPage applicantData={applicantData} />
