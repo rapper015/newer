@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import * as FileSaver from 'file-saver';
 import * as XLSX from 'xlsx';
 import './YourData.css';
+import Header from './Navbar';
 
 const YourDataPage = () => {
   const [applicantData, setApplicantData] = useState({
@@ -23,6 +24,7 @@ const YourDataPage = () => {
   };
 
   return (
+    <><Header />
     <div className="container">
       <div className="tableContainer">
       <h1>TA Applicant Details</h1>
@@ -48,6 +50,7 @@ const YourDataPage = () => {
       </div>
       
     </div>
+    </>
   );
 };
 

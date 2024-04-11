@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './RegisterPage2.css';
+import Header from './Navbar';
 
 const SubmitApplicant = () => {
   const [studentId, setStudentId] = useState('');
@@ -21,6 +22,7 @@ const SubmitApplicant = () => {
   };
 
   return (
+    <><Header />
     <div className="container"> <div className="imageContainer">
     <img src='/elements.svg'  alt="Your description" />
   </div>
@@ -112,6 +114,7 @@ const SubmitApplicant = () => {
         </form>
       </div>  
     </div>
+    </>
   );
 };
 

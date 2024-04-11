@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './RegisterPage2.css';
+import Header from './Navbar';
 const CheckStatusPage = () => {
   const [courseId, setCourseId] = useState('');
   const [statusMessage, setStatusMessage] = useState('');
@@ -10,6 +11,8 @@ const CheckStatusPage = () => {
   };
 
   return (
+    <>
+    <Header />
     <div className="container"> <div className="imageContainer">
     <img src='/elements.svg'  alt="Your description" />
   </div>
@@ -44,6 +47,7 @@ const CheckStatusPage = () => {
         {statusMessage && <p>{statusMessage}</p>}
       </div>  
     </div>
+    </>
   );
 };
 
