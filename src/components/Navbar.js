@@ -6,7 +6,7 @@ import './Navbar.css';
 function Header() {
 
   const [isOpen, setIsOpen] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false); // Add a state for the dropdown
+  const [dropdownOpen, setDropdownOpen] = useState(false); 
 
   const toggleDropdown = () => setDropdownOpen(prevState => !prevState);
   return (
@@ -14,34 +14,23 @@ function Header() {
       <div className="nav" open={isOpen}>
         <h6 className="title">Company</h6>
         <div className="navMenu">
-          <Link to="/home">
-            <span>Home</span>
+          <Link to="/yourdata">
+            <span>Show Instructors</span>
           </Link>
-          <div onMouseEnter={toggleDropdown} onMouseLeave={toggleDropdown}>
-          <Link to="/applicant">
-  <span className="styledSpan1">Ta Applicant</span>
-</Link>
-            {dropdownOpen && (
-              <div className="dropdownMenu">
-                <Link to="/submitapplicant">Submit Application</Link>
-                <Link to="/checkstatus">Check Status</Link>
-                <Link to="/yourdata">Your Data</Link>
-                <Link to="/notifications">Notifications</Link>
-                <Link to="/logout">Logout</Link>
-              </div>
-            )}
-          </div>
-          <Link to="/">
-            <span>Department Staff</span>
+          <Link to="/register2">
+            <span>Course Management</span>
           </Link>
-          <Link to="/">
-            <span>Ta Committe</span>
+          <Link to="/preliminaryMatching">
+            <span>Preliminary Matching</span>
           </Link>
-          <Link to="/">
-            <span>Instructor</span>
+          <Link to="/dataReview">
+            <span>Data Review</span>
           </Link>
-          <Link to="/">
-            <span>Contact Us</span>
+          <Link to="/sendPreliminaryMatches">
+            <span>Send Preliminary Matches</span>
+          </Link>
+          <Link to="/logout">
+            <span>Logout</span>
           </Link>
         </div>
         <Link to="/">
@@ -54,28 +43,28 @@ function Header() {
       </div>
       <div className="sidebar" open={isOpen}>
         <div className="nav" open={isOpen}>
-          <Link className="styledLink" to="/home">
-            <span className="styledSpan">Home</span>
+          <Link className="styledLink" to="/showInstructors">
+            <span className="styledSpan">Show Instructors</span>
           </Link>
           <span className="span" />
-          <Link className="styledLink" to="/applicant">
-            <span className="styledSpan">Ta Applicant</span>
+          <Link className="styledLink" to="/courseManagement">
+            <span className="styledSpan">Course Management</span>
           </Link>
           <span className="span" />
-          <Link className="styledLink" to="/">
-            <span className="styledSpan">Department Staff</span>
+          <Link className="styledLink" to="/preliminaryMatching">
+            <span className="styledSpan">Preliminary Matching</span>
           </Link>
           <span className="span" />
-          <Link className="styledLink" to="/">
-            <span className="styledSpan">Ta Committe</span>
+          <Link className="styledLink" to="/dataReview">
+            <span className="styledSpan">Data Review</span>
           </Link>
           <span className="span" />
-          <Link className="styledLink" to="/">
-            <span className="styledSpan">Instructor</span>
+          <Link className="styledLink" to="/sendPreliminaryMatches">
+            <span className="styledSpan">Send Preliminary Matches</span>
           </Link>
           <span className="span" />
-          <Link className="styledLink" to="/">
-            <span className="styledSpan">Contact Us</span>
+          <Link className="styledLink" to="/logout">
+            <span className="styledSpan">Logout</span>
           </Link>
           <span className="span" />
           <Link to="/profile">

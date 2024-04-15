@@ -4,7 +4,7 @@ import './Login.css';
 import NotificationPopup from './Notification'; // import the NotificationPopup component
 
 const LoginPage = () => {
-  const [phone_no, setphone_no] = useState('');
+  const [Idd, setID] = useState('');
   const [password, setPassword] = useState('');
   const [notificationNumber, setNotificationNumber] = useState(null);
 
@@ -27,13 +27,13 @@ const LoginPage = () => {
           <h1 className="title">Log in to your account</h1>
 
           <div className="inputContainer">
-            <label htmlFor="phone_no" className="label">User name / Email</label>
+            <label htmlFor="Idd" className="label">User ID</label>
             <input
-              type="number"
-              id="phone_no"
-              name="phone_no"
-              value={phone_no}
-              onChange={(e) => setphone_no(e.target.value)}
+              type="text"
+              id="Idd"
+              name="Idd"
+              value={Idd}
+              onChange={(e) => setID(e.target.value)}
               required
               className="input"
             />

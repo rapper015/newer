@@ -3,9 +3,12 @@ import { Link } from 'react-router-dom';
 import './Register.css';
 
 const RegisterPage = () => {
-  const [phone_no, setphone_no] = useState('');
-  const [name,setname] =useState('');
+  const [fullName, setFullName] = useState('');
+  const [email, setEmail] = useState('');
+  const [userID, setUserID] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+
   return (
     <div className="container">
       <div className="imageContainer">
@@ -18,36 +21,36 @@ const RegisterPage = () => {
           <h1 className="title">Log in to your account</h1>
 
           <div className="inputContainer">
-            <label htmlFor="phone_no" className="label">User name</label>
+            <label htmlFor="fullName" className="label">Full Name</label>
             <input
               type="text"
-              id="name"
-              name="name"
-              value={name}
-              onChange={(e) => setname(e.target.value)}
+              id="fullName"
+              name="fullName"
+              value={fullName}
+              onChange={(e) => setFullName(e.target.value)}
               required
               className="input"
             />
           </div>
           <div className="inputContainer">
-            <label htmlFor="phone_no" className="label">Email</label>
+            <label htmlFor="email" className="label">Email</label>
             <input
-              type="number"
-              id="phone_no"
-              name="phone_no"
-              value={phone_no}
-              onChange={(e) => setphone_no(e.target.value)}
+              type="email"
+              id="email"
+              name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               required className="input"
             />
           </div>
           <div className="inputContainer">
-            <label htmlFor="phone_no" className="label">Phone No</label>
+            <label htmlFor="userID" className="label">UserID</label>
             <input
-              type="number"
-              id="phone_no"
-              name="phone_no"
-              value={phone_no}
-              onChange={(e) => setphone_no(e.target.value)}
+              type="text"
+              id="userID"
+              name="userID"
+              value={userID}
+              onChange={(e) => setUserID(e.target.value)}
               required className="input"
             />
          </div>
@@ -59,6 +62,17 @@ const RegisterPage = () => {
               name="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              required className="input"
+            />
+           </div>
+           <div className="inputContainer">
+            <label htmlFor="confirmPassword" className="label">Confirm Password:</label>
+            <input
+              type="password"
+              id="confirmPassword"
+              name="confirmPassword"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
               required className="input"
             />
            </div>
