@@ -1,0 +1,1 @@
+export  const BASE_URL='https://applicant-3c5eff170bd3.herokuapp.com/';

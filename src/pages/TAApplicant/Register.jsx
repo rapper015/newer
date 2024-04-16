@@ -1,0 +1,147 @@
+import { Link, useNavigate } from "react-router-dom";
+import React, { useState } from 'react'
+import Button from "../../components/Button";
+import axios from "axios";
+import { BASE_URL } from "../../constant";
+
+
+export default function Register() {
+  const navigate=useNavigate();
+
+	const [fullName, setFullName] = useState('');
+	const [email, setEmail] = useState('');
+	const [phoneNumber, setPhoneNumber] = useState('');
+	const [zNumber, setZNumber] = useState('');
+	const [department, setDepartment] = useState('');
+	const [level, setLevel] = useState('');
+	const [password, setPassword] = useState('');
+  
+
+  const handleSubmit=(e)=>{
+    e.preventDefault()
+    const data={
+      first_name:fullName,
+      email,
+      password,
+      level,
+      department,
+      z_number:zNumber,
+      phone_no:phoneNumber,
+      ta_applicant:true
+    }
+    axios.post(`${BASE_URL}account/register/`,data)
+    .then(res=>{
+      navigate('/TAApplicant/login')
+    })
+    .catch(err=>{
+      alert(err.response.data)
+    })
+  }
+  return (
+	<div className="container">
+<div className="imageContainer">
+  <img src='/empty-search.svg'  alt="Your description" />
+</div>
+<div className="divider" />
+<div className="formContainer">
+<form>
+	<h1 className="title">TA Committe Member</h1>
+	<h1 className="title">Register your account</h1>
+	<div className="inputContainer">
+        <label htmlFor="fullName" className="label">Full Name:</label>
+        <input
+          type="text"
+          id="fullName"
+          name="fullName"
+          value={fullName}
+          onChange={(e) => setFullName(e.target.value)}
+          required
+          className="input"
+        />
+      </div>
+
+      <div className="inputContainer">
+        <label htmlFor="email" className="label">Email:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+          className="input"
+        />
+      </div>
+      <div className="inputContainer">
+        <label htmlFor="phoneNumber" className="label">Phone Number:</label>
+        <input
+          type="text"
+          id="phoneNumber"
+          name="phoneNumber"
+          value={phoneNumber}
+          onChange={(e) => setPhoneNumber(e.target.value)}
+          required
+          className="input"
+        />
+      </div>
+      <div className="inputContainer">
+        <label htmlFor="zNumber" className="label">Z Number:</label>
+        <input
+          type="text"
+          id="zNumber"
+          name="zNumber"
+          value={zNumber}
+          onChange={(e) => setZNumber(e.target.value)}
+          required
+          className="input"
+        />
+      </div>
+
+      <div className="inputContainer">
+        <label htmlFor="department" className="label">Department:</label>
+        <input
+          type="text"
+          id="department"
+          name="department"
+          value={department}
+          onChange={(e) => setDepartment(e.target.value)}
+          required
+          className="input"
+        />
+      </div>
+
+      <div className="inputContainer">
+        <label htmlFor="level" className="label">Level:</label>
+        <input
+          type="text"
+          id="level"
+          name="level"
+          value={level}
+          onChange={(e) => setLevel(e.target.value)}
+          required
+          className="input"
+        />
+      </div>
+
+      <div className="inputContainer">
+        <label htmlFor="password" className="label">Password:</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+          className="input"
+        />
+      </div>
+	 <div className="buttonContainer">
+	 <Button title={'Register'} onClick={handleSubmit}/>
+	</div>
+	<Link to="/TACommitte/login" className="linker">Already have an Account? Login In</Link>
+  </form>
+</div>  
+</div>
+  )
+}
+

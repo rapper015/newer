@@ -18,6 +18,8 @@
   .formContainer {
     flex: 1 0 200px;
     margin: 10px;
+    background-color: #fff;
+    padding: 30px;
   }
   
   @media screen and (max-width: 768px) {
@@ -63,6 +65,10 @@
   }
   
   .inputContainer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
     margin-bottom: 1rem;
   }
   

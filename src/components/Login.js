@@ -23,7 +23,7 @@ const LoginPage = () => {
       <div className="divider" />
       <div className="formContainer">
         <form onSubmit={handleSubmit}>
-          <h1 className="title">Company name</h1>
+          <h1 className="title">TA Applicant</h1>
           <h1 className="title">Log in to your account</h1>
 
           <div className="inputContainer">
